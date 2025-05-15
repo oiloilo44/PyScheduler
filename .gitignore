@@ -1,0 +1,76 @@
+# Python 관련 파일
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+
+# 가상환경
+.venv
+venv/
+ENV/
+
+# 로그 파일
+*.log
+logs/
+
+# 캐시 디렉토리
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# IDE 설정 파일
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# 데이터 파일 및 로컬 개발 설정
+*.sqlite
+*.db
+.env
+.env.local
+.env.development.local
+
+# 빌드 결과물
+main.dist/
+main.build/
+*.exe
+*.out
+
+# macOS 관련 파일
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows 관련 파일
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 보존해야 할 파일 (명시적으로 포함)
+# !pyproject.toml
+# !uv.lock
