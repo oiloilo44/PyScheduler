@@ -23,13 +23,13 @@ wheels/
 *.spec
 
 # 가상환경
-.venv
-venv/
+.venv/
 ENV/
 
 # 로그 파일
 *.log
 logs/
+scheduler.log
 
 # 캐시 디렉토리
 .pytest_cache/
@@ -51,6 +51,7 @@ htmlcov/
 # 데이터 파일 및 로컬 개발 설정
 *.sqlite
 *.db
+data/
 .env
 .env.local
 .env.development.local
@@ -71,6 +72,9 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+# Python 버전 파일
+.python-version
+
 # 보존해야 할 파일 (명시적으로 포함)
-# !pyproject.toml
-# !uv.lock
+!pyproject.toml
+!uv.lock

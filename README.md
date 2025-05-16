@@ -18,15 +18,18 @@ git clone https://github.com/yourusername/pyscheduler.git
 cd pyscheduler
 ```
 
-2. 필요한 패키지를 설치합니다. (uv 패키지 매니저 사용)
+2. 패키지 설치 및 환경 동기화
+(이미 pyproject.toml과 uv.lock이 있으므로 아래 명령만 실행)
 ```
-uv init  # 이미 실행된 경우 생략
-uv add PyQt6 schedule
+uv sync
 ```
 
-3. 프로그램을 실행합니다.
+- 추가 패키지가 필요하면:  
+  `uv add <패키지명>`
+
+3. 프로그램 실행
 ```
-python main.py
+uv run main.py
 ```
 
 ## 사용 방법
@@ -43,6 +46,10 @@ python main.py
 ```
 pyscheduler/
 ├── data/                # 작업 데이터 저장 디렉토리
+│   └── tasks.json       # 작업 설정 저장 파일
+├── main.py              # 프로그램 진입점
+├── main.dist/           # 빌드 결과물(배포용)
+├── main.build/          # 빌드 중간 산출물
 ├── scheduler/           # 스케줄러 관련 모듈
 │   ├── __init__.py
 │   ├── models.py        # 데이터 모델
@@ -52,12 +59,25 @@ pyscheduler/
 │   ├── __init__.py
 │   ├── main_window.py   # 메인 창
 │   └── task_dialog.py   # 작업 추가/편집 대화상자
-├── main.py              # 프로그램 진입점
+├── .venv/               # 가상환경(uv)
+├── .gitignore           # Git 무시 파일
+├── pyproject.toml       # 프로젝트 설정 및 의존성
+├── uv.lock              # 의존성 잠금 파일(반드시 버전 관리)
+├── .python-version      # Python 버전 지정
 └── README.md
 ```
 
 ## 요구 사항
 
-- Python 3.8 이상
+- Python 3.12 이상
 - PyQt6
 - schedule
+- pydantic
+- nuitka (빌드용)
+- uv (패키지 매니저)
+
+## 기타 참고 사항
+
+- `.venv/`는 반드시 .gitignore에 포함하세요.
+- `pyproject.toml`, `uv.lock`는 반드시 버전 관리에 포함하세요.
+- 데이터 파일(`data/`), 빌드 산출물(`main.dist/`, `main.build/`), 로그(`*.log`, `scheduler.log`) 등은 .gitignore에 포함되어야 합니다.
