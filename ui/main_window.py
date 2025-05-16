@@ -96,7 +96,7 @@ class MainWindow(QMainWindow):
         countdown_layout.addStretch()
         
         # 남은 시간 레이블
-        self.countdown_label = QLabel("다음 업데이트까지 10초 남음")
+        self.countdown_label = QLabel("목록 새로고침까지 10초 남음")
         countdown_layout.addWidget(self.countdown_label)
         countdown_layout.addStretch()
         
@@ -140,7 +140,7 @@ class MainWindow(QMainWindow):
         if self.countdown_seconds <= 0:
             self.countdown_seconds = 10
             
-        self.countdown_label.setText(f"다음 업데이트까지 {self.countdown_seconds}초 남음")
+        self.countdown_label.setText(f"목록 새로고침까지 {self.countdown_seconds}초 남음")
     
     def _load_tasks(self) -> None:
         """
@@ -148,7 +148,7 @@ class MainWindow(QMainWindow):
         """
         # 카운트다운 초기화
         self.countdown_seconds = 10
-        self.countdown_label.setText(f"다음 업데이트까지 {self.countdown_seconds}초 남음")
+        self.countdown_label.setText(f"목록 새로고침까지 {self.countdown_seconds}초 남음")
         
         # 현재 선택된 작업 ID 저장
         selected_task_id = self._get_selected_task_id()
