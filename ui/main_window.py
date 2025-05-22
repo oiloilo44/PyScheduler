@@ -193,7 +193,13 @@ class MainWindow(QMainWindow):
             
             # 다음 실행
             next_run = task.next_run if task.next_run else "없음"
-            self.task_table.setItem(i, 4, QTableWidgetItem(next_run))
+            next_run_item = QTableWidgetItem(next_run)
+            
+            # 이전 실행 시간을 툴팁으로 설정
+            if task.last_run:
+                next_run_item.setToolTip(f"이전 실행: {task.last_run}")
+            
+            self.task_table.setItem(i, 4, next_run_item)
             
             # 활성화 체크박스 (셀 안에 넣기)
             checkbox = QCheckBox()

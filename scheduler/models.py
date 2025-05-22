@@ -19,13 +19,6 @@ class Task(BaseModel):
     next_run: Optional[str] = None  # 다음 실행 예정 시간
     interval_minutes: Optional[int] = None  # 주기적 실행 시 분 단위 간격
 
-    def update_next_run(self) -> None:
-        """
-        다음 실행 시간을 업데이트합니다.
-        """
-        # 추후 구현
-        pass
-
     def to_dict(self) -> dict:
         """
         Task를 사전 형태로 변환합니다.
